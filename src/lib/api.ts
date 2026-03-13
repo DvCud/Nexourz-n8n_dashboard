@@ -7,7 +7,7 @@ import type { WorkflowMetadata, GitHubFile, N8nWorkflow, WorkflowCategory } from
 
 const GITHUB_API_BASE = 'https://api.github.com';
 const REPO_OWNER = 'DvCud';
-const REPO_NAME = 'Nexourz-n8n_dashboard';
+const REPO_NAME = 'n8n-workflows'; // Workflow data repo (separate from dashboard source)
 // Base URL for raw content (used for future direct file access)
 const _RAW_CONTENT_BASE = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/main`;
 
