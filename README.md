@@ -1,35 +1,28 @@
-# 🌌 n8n Workflow Galaxy
+# 🌌 Nexourz Workflow Galaxy
 
-A stunning **3D interactive dashboard** that visualizes n8n automation workflows as an orbiting galaxy. Built with Next.js 15, React Three Fiber, and TailwindCSS.
+A stunning **3D interactive dashboard** by [Nexourz](https://nexourz.com) that visualizes n8n automation workflows as an orbiting galaxy. Built with Next.js 16, React Three Fiber, and TailwindCSS 4.
 
-![n8n Workflow Galaxy](https://img.shields.io/badge/n8n-Workflows-00fff2?style=for-the-badge&logo=n8n)
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![Nexourz](https://img.shields.io/badge/Nexourz-Automation-00fff2?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
 ![Three.js](https://img.shields.io/badge/Three.js-3D-000?style=for-the-badge&logo=three.js)
+
+> *If It Can Be Done, It Can Be Automated.* — Nexourz
 
 ## ✨ Features
 
-- **🌟 3D Galaxy Visualization** - Workflows orbit in an immersive particle-filled space
-- **🎨 Glassmorphism UI** - Modern, sleek interface with neon accents
-- **🔄 Real-time GitHub Sync** - Automatically fetches workflows from repository
-- **📊 Multiple View Modes** - Toggle between Galaxy and Grid views
-- **🎵 Ambient Audio** - Optional atmospheric soundtrack
-- **📱 Responsive Design** - Works beautifully on all devices
-- **♿ Accessible** - WCAG 2.2 compliant with keyboard navigation
+- **🌟 3D Galaxy Visualization** — Workflows orbit in an immersive particle-filled space
+- **🎨 Glassmorphism UI** — Modern, sleek interface with neon accents
+- **🔄 Real-time GitHub Sync** — Automatically fetches workflows from repository
+- **📊 Multiple View Modes** — Toggle between Galaxy and Grid views
+- **🧩 Embeddable** — Dedicated `/embed` route for iframe integration
+- **📱 Responsive Design** — Works beautifully on all devices
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-- Node.js 22+
-- npm or pnpm
-- Supabase account (optional, for caching)
-
-### Installation
-
 ```bash
 # Clone the repository
-git clone https://github.com/DvCud/n8n-workflow-dashboard.git
-cd n8n-workflow-dashboard
+git clone https://github.com/DvCud/Nexourz-n8n_dashboard.git
+cd Nexourz-n8n_dashboard
 
 # Install dependencies
 npm install
@@ -47,8 +40,8 @@ Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
-|------------|---------|
-| **Next.js 15** | React framework with App Router |
+|---|---|
+| **Next.js 16** | React framework with App Router |
 | **React Three Fiber** | Declarative 3D rendering |
 | **@react-three/drei** | Useful R3F helpers |
 | **@react-three/postprocessing** | Bloom & vignette effects |
@@ -60,50 +53,47 @@ Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
 ## 📁 Project Structure
 
 ```
-n8n-workflow-dashboard/
+Nexourz-n8n_dashboard/
 ├── src/
-│   ├── app/                    # Next.js App Router
+│   ├── app/
 │   │   ├── api/workflows/      # API routes
+│   │   ├── embed/              # Embeddable route (for iframes)
 │   │   ├── layout.tsx          # Root layout
 │   │   └── page.tsx            # Main dashboard
 │   ├── components/
 │   │   ├── 3d/                 # Three.js components
-│   │   │   ├── Scene.tsx       # Canvas & lighting
-│   │   │   ├── GalaxyView.tsx  # Orbital layout
-│   │   │   ├── WorkflowCard3D.tsx
-│   │   │   └── ParticleField.tsx
-│   │   └── ui/                 # UI components
-│   │       ├── Navigation.tsx
-│   │       ├── DetailPanel.tsx
-│   │       └── LoadingScreen.tsx
-│   ├── lib/
-│   │   ├── api.ts              # GitHub API client
-│   │   └── supabase.ts         # Supabase client
-│   ├── stores/
-│   │   └── workflowStore.ts    # Zustand store
-│   └── types/
-│       └── workflow.ts         # TypeScript types
-├── vercel.json                 # Vercel config
-├── supabase-schema.sql         # Database schema
-└── .github/workflows/          # CI/CD
+│   │   └── ui/                 # UI overlay components
+│   ├── lib/                    # API & Supabase clients
+│   ├── stores/                 # Zustand state management
+│   └── types/                  # TypeScript types
+├── public/
+│   └── nexourz-logo.jpeg       # Nexourz branding
+├── EMBEDDING.md                # Integration documentation
+├── vercel.json                 # Vercel deployment config
+└── supabase-schema.sql         # Database schema
 ```
 
 ## 🎮 Controls
 
 | Action | Control |
-|--------|---------|
+|---|---|
 | **Rotate** | Click + Drag |
 | **Zoom** | Scroll wheel |
 | **Select** | Click on card |
 | **Pan** | Right-click + Drag |
 
-## 🗃️ Database Setup (Optional)
+## 🧩 Embedding
 
-For workflow caching and analytics, set up Supabase:
+This dashboard can be embedded into any website via iframe. See [EMBEDDING.md](EMBEDDING.md) for full documentation.
 
-1. Create a new project at [supabase.com](https://supabase.com)
-2. Go to SQL Editor and run `supabase-schema.sql`
-3. Copy your project URL and anon key to `.env.local`
+```html
+<iframe
+  src="https://your-deployment-url.vercel.app/embed"
+  width="100%" height="600"
+  style="border: none; border-radius: 12px;"
+  title="Nexourz Workflow Galaxy"
+></iframe>
+```
 
 ## 🚢 Deployment
 
@@ -116,40 +106,18 @@ For workflow caching and analytics, set up Supabase:
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 4. Deploy!
 
-### Manual
-
-```bash
-npm run build
-npm start
-```
-
-## 📈 Performance
-
-- **60fps** 3D rendering with WebGL
-- **ISR** for 5-minute cache revalidation
-- **Lazy loading** for 3D assets
-- **Optimized particles** with GPU instancing
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push: `git push origin feature/amazing`
-5. Open a Pull Request
-
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License
 
-## 🙏 Credits
+## 🔗 Links
 
-- Workflows by [DvCud](https://github.com/DvCud)
-- Powered by [n8n](https://n8n.io) automation platform
-- 3D magic via [Three.js](https://threejs.org)
+- [Nexourz Website](https://nexourz.com)
+- [GitHub Repository](https://github.com/DvCud/Nexourz-n8n_dashboard)
+- [Powered by n8n](https://n8n.io)
 
 ---
 
 <p align="center">
-  Made with 💜 and ☕
+  Built by <a href="https://nexourz.com"><strong>Nexourz</strong></a> — If It Can Be Done, It Can Be Automated.
 </p>

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 // ============================================================
-// Root Layout for n8n Workflow Dashboard
+// Root Layout for Nexourz Workflow Dashboard
 // ============================================================
 
 const inter = Inter({
@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "n8n Workflow Galaxy | Interactive 3D Portfolio",
+  title: "Nexourz Workflow Galaxy | Interactive 3D Dashboard",
   description:
-    "Explore a stunning 3D visualization of production-ready n8n automation workflows. Interactive galaxy view showcasing AI, SEO, HR, and data processing automations.",
+    "Explore Nexourz's stunning 3D visualization of production-ready automation workflows. Interactive galaxy view showcasing AI, SEO, HR, and data processing automations.",
   keywords: [
     "n8n",
     "automation",
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     "SEO tools",
     "data processing",
   ],
-  authors: [{ name: "DvCud", url: "https://github.com/DvCud" }],
+  authors: [{ name: "Nexourz", url: "https://nexourz.com" }],
   openGraph: {
-    title: "n8n Workflow Galaxy",
-    description: "Interactive 3D portfolio of automation workflows",
+    title: "Nexourz Workflow Galaxy",
+    description: "Nexourz - Interactive 3D portfolio of automation workflows",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "n8n Workflow Galaxy",
-    description: "Interactive 3D portfolio of automation workflows",
+    title: "Nexourz Workflow Galaxy",
+    description: "Nexourz - Interactive 3D portfolio of automation workflows",
   },
   robots: {
     index: true,

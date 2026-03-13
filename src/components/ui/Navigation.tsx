@@ -25,26 +25,37 @@ export function Navigation() {
         >
             <div className="max-w-7xl mx-auto">
                 <div className="glass-panel rounded-2xl px-6 py-3 flex items-center justify-between">
-                    {/* Logo & Title */}
+                    {/* Nexourz Logo & Title */}
                     <div className="flex items-center gap-4">
-                        <div className="relative">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center">
-                                <svg
-                                    className="w-6 h-6 text-white"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                                    />
-                                </svg>
-                            </div>
-                            <div className="absolute -inset-1 bg-gradient-to-br from-cyan-500/30 to-purple-600/30 rounded-xl blur-md -z-10" />
-                        </div>
+                        <a
+                            href="https://nexourz.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative flex-shrink-0"
+                            title="Visit Nexourz"
+                            style={{
+                                transition: 'opacity 0.3s ease, transform 0.3s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.opacity = '0.8';
+                                e.currentTarget.style.transform = 'scale(1.05)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.opacity = '1';
+                                e.currentTarget.style.transform = 'scale(1)';
+                            }}
+                        >
+                            <img
+                                src="/nexourz-logo.jpeg"
+                                alt="Nexourz Logo"
+                                style={{
+                                    height: '55px',
+                                    width: 'auto',
+                                    objectFit: 'contain',
+                                    borderRadius: '8px',
+                                }}
+                            />
+                        </a>
 
                         <div>
                             <h1 className="text-lg font-bold text-white">n8n Workflows</h1>
@@ -93,8 +104,8 @@ export function Navigation() {
                         <button
                             onClick={toggleAudio}
                             className={`p-2.5 rounded-xl transition-all duration-300 ${settings.audioEnabled
-                                    ? 'bg-cyan-500/20 text-cyan-400'
-                                    : 'bg-white/5 text-gray-400 hover:text-white'
+                                ? 'bg-cyan-500/20 text-cyan-400'
+                                : 'bg-white/5 text-gray-400 hover:text-white'
                                 }`}
                             title={settings.audioEnabled ? 'Mute Audio' : 'Enable Audio'}
                         >
@@ -112,7 +123,7 @@ export function Navigation() {
 
                         {/* GitHub Link */}
                         <a
-                            href="https://github.com/DvCud/n8n-workflows"
+                            href="https://github.com/DvCud/Nexourz-n8n_dashboard"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2.5 rounded-xl bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300"
@@ -151,8 +162,8 @@ function ViewModeButton({
         <button
             onClick={onClick}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isActive
-                    ? 'bg-gradient-to-r from-cyan-500/30 to-purple-500/30 text-white'
-                    : 'text-gray-400 hover:text-white'
+                ? 'bg-gradient-to-r from-cyan-500/30 to-purple-500/30 text-white'
+                : 'text-gray-400 hover:text-white'
                 }`}
         >
             {icon}
